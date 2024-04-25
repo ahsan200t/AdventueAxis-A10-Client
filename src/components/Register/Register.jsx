@@ -19,13 +19,13 @@ const Register = () => {
            <div className="hero min-h-screen bg-base-200 rounded-3xl mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6">Create Your Account!</h1>
+            <h1 className="text-5xl font-bold mb-6 font-serif">Create Your Account!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-sm bg-gray-300 border border-emerald-700">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Name</span>
+                  <span className="label-text font-bold font-serif">Name</span>
                 </label>
                 <input
                   type="text"
@@ -38,7 +38,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Email</span>
+                  <span className="label-text font-bold font-serif">Email</span>
                 </label>
                 <input
                   type="email"
@@ -50,7 +50,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Photo URL</span>
+                  <span className="label-text font-bold font-serif">Photo URL</span>
                 </label>
                 <input
                   type="text"
@@ -62,7 +62,7 @@ const Register = () => {
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text font-bold">Password</span>
+                  <span className="label-text font-bold font-serif">Password</span>
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -80,10 +80,10 @@ const Register = () => {
                 {errors.password && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-emerald-700 text-white font-bold">Register</button>
+                <button className="btn bg-emerald-700 text-white font-semibold font-serif">Register</button>
               </div>
               <div className="text-center">
-                <p>Already Have An Account? <Link to='/login' className="link link-success text-xl font-semibold no-underline">Login</Link></p>
+                <p className="font-serif">Already Have An Account?  <Link to='/login' className="link link-success font-semibold no-underline font-serif">Login</Link></p>
               </div>
             </form>
             {registerError && (
