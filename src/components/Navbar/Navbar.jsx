@@ -12,11 +12,25 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-primary border border-primary font-semibold"
+                  ? "text-emerald-700 border border-emerald-700 font-bold bg-gray-300"
                   : "font-semibold"
               }
             >
               Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/tourist"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-emerald-700 border border-emerald-700 font-bold"
+                  : "font-semibold"
+              }
+            >
+              All Tourists Spot
             </NavLink>
           </li>
     
@@ -28,11 +42,11 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-primary border border-primary font-semibold"
+                    ? "text-emerald-700 border border-emerald-700 font-bold"
                     : "font-semibold"
                 }
               >
-                Update Profile
+                Add Tourists Spot
               </NavLink>
             </li>
           )}
@@ -44,11 +58,11 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-primary border border-primary font-semibold"
+                  ? "text-emerald-700 border border-emerald-700 font-bold"
                   : "font-semibold"
               }
             >
-              Selling Details
+              My List
             </NavLink>
           </li>
           <li>
@@ -58,7 +72,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-primary border border-primary font-semibold"
+                  ? "text-emerald-700 border border-emerald-700 font-bold"
                   : "font-semibold"
               }
             >
@@ -129,7 +143,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn btn-sm btn-primary">Login</button>
+              <button className="btn btn-sm bg-emerald-600 text-white">Login</button>
             </Link>
           )}
         </div>
