@@ -11,7 +11,7 @@ const ErrorElement = () => {
             </div>
             <div className="text-center">
                 <h1 className="text-2xl font-bold mb-2 text-green-500">Back to Home</h1>
-              <Link to='/'>  <button className="btn text-xl font-bold w-1/6 my-3 btn-primary">Home</button></Link>
+              <Link to='/'>  <button className="btn text-xl font-bold w-1/6 my-3 bg-emerald-700 text-white">Home</button></Link>
             </div>
         </div>
     );
