@@ -128,8 +128,8 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="text-2xl md:text-4xl font-semibold font-serif">
-          AdventureAxis
+        <a className="text-2xl md:text-4xl font-semibold font-serif text-secondary">
+          Adventure<span className="text-emerald-700">Axis</span>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
