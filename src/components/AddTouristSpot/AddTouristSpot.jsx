@@ -49,6 +49,7 @@ const AddTouristSpot = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          form.reset()
         }
       });
   };

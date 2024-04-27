@@ -8,12 +8,6 @@ const SpotCard = ({ spot }) => {
     country,
     location,
     description,
-    cost,
-    season,
-    time,
-    visitors,
-    email,
-    user,
     photo,}=spot;
   return (
     <div>
@@ -21,14 +15,14 @@ const SpotCard = ({ spot }) => {
         <figure>
           <img src={photo} alt="Shoes" />
         </figure>
-        <div className="card-body">
-          <h2 className="font-semibold">{location}</h2>
-          <h4>{country}</h4>
-          <h3>{name}</h3>
-          <p>{description.slice(0,110)}</p>
+        <div className="card-body bg-gray-300 rounded-b-2xl">
+          <h2 className="font-bold font-serif text-secondary">{location}</h2>
+          <h4 className="font-semibold font-serif">{country}</h4>
+          <h3 className="font-medium font-serif">{name}</h3>
+          <p className="font-serif">{description.slice(0,110)}....</p>
           <div>
             <Link to={`/details/${_id}`}>
-              <button className="btn w-full bg-emerald-700 text-white">
+              <button className="btn w-full bg-emerald-700 text-white font-serif">
                 View Details
               </button>
             </Link>
