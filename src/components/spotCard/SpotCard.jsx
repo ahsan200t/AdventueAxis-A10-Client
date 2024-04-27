@@ -2,16 +2,30 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const SpotCard = ({ spot }) => {
-  const {_id}=spot;
+  const {
+    _id,
+     name,
+    country,
+    location,
+    description,
+    cost,
+    season,
+    time,
+    visitors,
+    email,
+    user,
+    photo,}=spot;
   return (
     <div>
       <div className="card card-compact border border-emerald-700 bg-base-100 shadow h-[400px]">
         <figure>
-          <img src={spot.photo} alt="Shoes" />
+          <img src={photo} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{spot.name}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="font-semibold">{location}</h2>
+          <h4>{country}</h4>
+          <h3>{name}</h3>
+          <p>{description.slice(0,110)}</p>
           <div>
             <Link to={`/details/${_id}`}>
               <button className="btn w-full bg-emerald-700 text-white">

@@ -13,6 +13,7 @@ import AddTouristSpot from "./components/AddTouristSpot/AddTouristSpot";
 import MyList from "./components/MyList/MyList";
 import SpotDetails from "./components/SpotDetails/SpotDetails";
 import AuthProvider from "./Provider/AuthProvider";
+import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add page",
-        element: <AddTouristSpot></AddTouristSpot>,
+        element: (
+          <PrivetRoute>
+            <AddTouristSpot></AddTouristSpot>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/my list",
@@ -48,7 +53,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <SpotDetails></SpotDetails>,
+        element: (
+          <PrivetRoute>
+            <SpotDetails></SpotDetails>
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/spots/${params.id}`),
       },

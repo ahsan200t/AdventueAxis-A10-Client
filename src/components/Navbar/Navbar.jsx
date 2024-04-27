@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -18,7 +21,7 @@ const Navbar = () => {
     }
   };
 
-  const { user, logOut } = false;
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -49,11 +52,10 @@ const Navbar = () => {
           All Tourists Spot
         </NavLink>
       </li>
-
       {user && (
         <li>
           <NavLink
-            to="/update profile"
+            to="/add page"
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
@@ -62,54 +64,47 @@ const Navbar = () => {
                 : "font-semibold"
             }
           >
-            Add Tourists Spot
+            Add Tourist Spot
           </NavLink>
         </li>
       )}
+
+     {user && (
        <li>
-        <NavLink
-          to="/add page"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-emerald-700 border border-emerald-700 font-bold"
-              : "font-semibold"
-          }
-        >
-          Add Tourist Spot
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/my list"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-emerald-700 border border-emerald-700 font-bold"
-              : "font-semibold"
-          }
-        >
-          My List
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/register"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-emerald-700 border border-emerald-700 font-bold"
-              : "font-semibold"
-          }
-        >
-          Register
-        </NavLink>
-      </li>
+       <NavLink
+         to="/my list"
+         className={({ isActive, isPending }) =>
+           isPending
+             ? "pending"
+             : isActive
+             ? "text-emerald-700 border border-emerald-700 font-bold"
+             : "font-semibold"
+         }
+       >
+         My List
+       </NavLink>
+     </li>
+     )}
+
+     {!user && (
+       <li>
+       <NavLink
+         to="/register"
+         className={({ isActive, isPending }) =>
+           isPending
+             ? "pending"
+             : isActive
+             ? "text-emerald-700 border border-emerald-700 font-bold"
+             : "font-semibold"
+         }
+       >
+         Register
+       </NavLink>
+     </li>
+     )}
     </>
   );
+  console.log(user);
   return (
     <div className="navbar bg-gray-100 px-4  mb-10 shadow mt-2">
       <div className="navbar-start">
@@ -153,7 +148,7 @@ const Navbar = () => {
         <div>
           <label className="cursor-pointer grid place-items-center mr-3">
             <input
-            onChange={handleToggle}
+              onChange={handleToggle}
               type="checkbox"
               className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
             />
@@ -190,24 +185,28 @@ const Navbar = () => {
         </div>
 
         {user ? (
-          <div className="dropdown dropdown-bottom flex items-center">
+          <div className="flex items-center">
             <label
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom"
+              className="btn btn-ghost btn-circle avatar"
               data-tip={user.displayName}
             >
-              <div className="w-10 rounded-full">
+              <div id="loginBtn" className="w-10 rounded-full">
                 <img
                   src={user?.photoURL || "https://i.ibb.co/2ykmyLP/ahsan.jpg"}
                 />
               </div>
             </label>
             <Link to="/">
-              <button onClick={logOut} className="btn btn-sm btn-secondary">
+              <button
+                onClick={logOut}
+                className="btn btn-sm bg-emerald-700 text-white"
+              >
                 Logout
               </button>
             </Link>
+            <Tooltip anchorSelect="#loginBtn" content={user.displayName} />
           </div>
         ) : (
           <Link to="/login">
