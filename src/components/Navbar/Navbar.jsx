@@ -66,10 +66,23 @@ const Navbar = () => {
           </NavLink>
         </li>
       )}
-
+       <li>
+        <NavLink
+          to="/add page"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-emerald-700 border border-emerald-700 font-bold"
+              : "font-semibold"
+          }
+        >
+          Add Tourist Spot
+        </NavLink>
+      </li>
       <li>
         <NavLink
-          to="/selling details"
+          to="/my list"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -98,7 +111,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-gray-100  mb-10 shadow">
+    <div className="navbar bg-gray-100 px-4  mb-10 shadow mt-2">
       <div className="navbar-start">
         <div className="dropdown dropdown-bottom z-10 ">
           <div
@@ -128,7 +141,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="text-2xl md:text-4xl font-semibold font-serif text-secondary">
+        <a className="text-2xl md:text-3xl font-semibold font-serif text-secondary">
           Adventure<span className="text-emerald-700">Axis</span>
         </a>
       </div>
