@@ -5,6 +5,7 @@ import MyListCard from "./MyListCard";
 const MyList = () => {
   const { user } = useContext(AuthContext);
   const [myData, setMyData] = useState([]);
+  const [spots,setSpots]=useState(myData)
   useEffect(() => {
     fetch(`http://localhost:5000/myList/${user?.email}`)
       .then((res) => res.json())
@@ -18,6 +19,8 @@ const MyList = () => {
         myData.map(data=><MyListCard 
         key={data._id}
         data={data}
+        spots={spots}
+        setSpots={setSpots}
         ></MyListCard>)
       }
     </div>

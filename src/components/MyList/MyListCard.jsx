@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 /* eslint-disable react/prop-types */
-const MyListCard = ({ data }) => {
+const MyListCard = ({ data, spots, setSpots }) => {
   const { _id, name, country, cost, time, photo } = data;
   const handleDelete = (_id) => {
     console.log(_id);
@@ -30,6 +30,8 @@ const MyListCard = ({ data }) => {
                 text: "Your Data has been deleted.",
                 icon: "success",
               });
+              const remaining = spots.filter((spot) => spot._id !== _id);
+              setSpots(remaining);
             }
           });
       }
