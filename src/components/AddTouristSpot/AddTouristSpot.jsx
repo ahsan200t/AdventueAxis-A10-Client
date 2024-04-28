@@ -59,7 +59,7 @@ const AddTouristSpot = () => {
   };
 
   return (
-    <div className="bg-gray-300 border border-emerald-700 md:p-24 rounded-3xl">
+    <div className="bg-gray-300 border border-emerald-700 p-4 m-4 md:p-24 rounded-3xl">
       <h1 className="text-3xl font-extrabold text-center mb-8 font-serif">
         Add Tourist Spot
       </h1>

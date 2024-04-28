@@ -135,7 +135,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="text-2xl md:text-3xl font-semibold font-serif text-secondary">
+        <a className="text-xl md:text-3xl font-semibold font-serif text-secondary">
           Adventure<span className="text-emerald-700">Axis</span>
         </a>
       </div>
@@ -200,7 +200,7 @@ const Navbar = () => {
             <Link to="/">
               <button
                 onClick={logOut}
-                className="btn btn-sm bg-emerald-700 text-white"
+                className="hidden md:btn md:btn-sm md:bg-emerald-700 md:text-white"
               >
                 Logout
               </button>
