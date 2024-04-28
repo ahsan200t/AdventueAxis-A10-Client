@@ -22,6 +22,7 @@ const AddTouristSpot = () => {
     const user = form.user.value;
     const photo = form.photo.value;
 
+
     const newSpot = {
       name,
       country,
@@ -35,7 +36,6 @@ const AddTouristSpot = () => {
       user,
       photo,
     };
-    console.log(newSpot)
     fetch("http://localhost:5000/spots", {
       method: "POST",
       headers: {

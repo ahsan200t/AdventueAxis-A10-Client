@@ -14,6 +14,7 @@ import MyList from "./components/MyList/MyList";
 import SpotDetails from "./components/SpotDetails/SpotDetails";
 import AuthProvider from "./Provider/AuthProvider";
 import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
+import AddCountry from "./components/AddCountry/AddCountry";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/tourist",
         element: <AllTouristSpot></AllTouristSpot>,
+        loader:()=> fetch("http://localhost:5000/spots")
       },
 
       {
@@ -61,6 +63,12 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/spots/${params.id}`),
       },
+      {
+        path:'/addcountry',
+        element:<AddCountry></AddCountry>,
+        loader: ()=> fetch("http://localhost:5000/country")
+
+      }
     ],
   },
 ]);
