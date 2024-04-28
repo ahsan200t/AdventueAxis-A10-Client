@@ -5,18 +5,18 @@
 
 ## Category:
 
----Southeast Asia---
+#### ---Southeast Asia---
 
 ## Features:
 
-.Secure Booking Management System.
+1. Secure Booking Management System.
 
-.Technology Integration.
+2. Technology Integration.
 
-.Secure Payment Processing System.
+3. Secure Payment Processing System.
 
-.Accessibility Features.
+4. Accessibility Features.
 
-.Quality Assurance.
+5. Quality Assurance.
 
 

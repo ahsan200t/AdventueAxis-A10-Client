@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 const Country = ({ singlecountry }) => {
   // eslint-disable-next-line react/prop-types
   const { photo, country, description } = singlecountry;
-  console.log(singlecountry);
   return (
     <div>
       <Link to=''>
-      <div className="card card-compact bg-base-100 shadow-xl">
+      <div className="card card-compact bg-base-100 shadow border border-emerald-700 h-[400px]">
       <figure>
         <img
           src={photo}
