@@ -1,7 +1,11 @@
+
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const AddTouristSpot = () => {
+  const {user}=useContext(AuthContext)
   const handleAddSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -197,6 +201,7 @@ const AddTouristSpot = () => {
               className="input input-bordered border-emerald-700 w-full"
               required
               name="email"
+              defaultValue={user?.email}
             />
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
@@ -211,6 +216,7 @@ const AddTouristSpot = () => {
               className="input input-bordered border-emerald-700 w-full"
               required
               name="user"
+              defaultValue={user?.displayName}
             />
           </div>
         </div>
