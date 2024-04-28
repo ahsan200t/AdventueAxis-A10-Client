@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -31,7 +32,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-emerald-700 border border-emerald-700 font-bold bg-gray-300"
+              ? "text-emerald-700 border border-emerald-700 font-bold font-serif bg-gray-300"
               : "font-semibold"
           }
         >
@@ -45,7 +46,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-emerald-700 border border-emerald-700 font-bold"
+              ? "text-emerald-700 border border-emerald-700 font-bold font-serif"
               : "font-semibold"
           }
         >
@@ -60,7 +61,7 @@ const Navbar = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-emerald-700 border border-emerald-700 font-bold"
+                ? "text-emerald-700 border border-emerald-700 font-bold font-serif"
                 : "font-semibold"
             }
           >
@@ -77,7 +78,7 @@ const Navbar = () => {
            isPending
              ? "pending"
              : isActive
-             ? "text-emerald-700 border border-emerald-700 font-bold"
+             ? "text-emerald-700 border border-emerald-700 font-bold font-serif"
              : "font-semibold"
          }
        >
@@ -94,7 +95,7 @@ const Navbar = () => {
            isPending
              ? "pending"
              : isActive
-             ? "text-emerald-700 border border-emerald-700 font-bold"
+             ? "text-emerald-700 border border-emerald-700 font-bold font-serif"
              : "font-semibold"
          }
        >
@@ -135,9 +136,9 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="text-xl md:text-3xl font-semibold font-serif text-secondary">
+       <Fade cascade damping={0.1} delay={500}> <a className="text-xl md:text-3xl font-semibold font-serif text-secondary">
           Adventure<span className="text-emerald-700">Axis</span>
-        </a>
+        </a></Fade>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>

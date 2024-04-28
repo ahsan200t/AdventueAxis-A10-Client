@@ -1,9 +1,11 @@
+import { Fade } from "react-awesome-reveal";
+
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-gray-100 text-base-content rounded-3xl my-6">
-        <div>
+        <Fade cascade damping={1} delay={1000}><div>
             <h1 className="text-3xl font-serif font-bold text-secondary">Adventure<span className="text-emerald-700">Axis</span></h1>
-        </div>
+        </div></Fade>
       <nav className="grid grid-flow-col gap-4">
         <a className="link link-hover font-semibold">About us</a>
         <a className="link link-hover font-semibold">Contact</a>

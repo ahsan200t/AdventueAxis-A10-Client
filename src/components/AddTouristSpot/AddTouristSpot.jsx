@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Fade } from "react-awesome-reveal";
 
 
 const AddTouristSpot = () => {
@@ -60,9 +61,9 @@ const AddTouristSpot = () => {
 
   return (
     <div className="bg-gray-300 border border-emerald-700 p-4 m-4 md:p-24 rounded-3xl">
-      <h1 className="text-3xl font-extrabold text-center mb-8 font-serif">
+      <Fade delay={500}><h1 className="text-3xl font-extrabold text-center mb-8 font-serif">
         Add Tourist Spot
-      </h1>
+      </h1></Fade>
       <form onSubmit={handleAddSpot}>
         {/* Country Name and Spot Name */}
         <div className="md:flex ">

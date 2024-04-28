@@ -30,9 +30,9 @@ const MyListCard = ({ data, spots, setSpots }) => {
                 text: "Your Data has been deleted.",
                 icon: "success",
               });
-              const remaining = spots.filter((spot) => spot._id !== _id);
-              setSpots(remaining);
             }
+            const remaining = spots.filter((spot) => spot._id !== _id);
+            setSpots(remaining);
           });
       }
     });
