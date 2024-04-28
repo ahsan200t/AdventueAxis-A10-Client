@@ -16,9 +16,9 @@ const SpotCard = ({ spot }) => {
           <img src={photo} alt="Shoes" />
         </figure>
         <div className="card-body bg-gray-300 rounded-b-2xl">
-          <h2 className="font-bold font-serif text-secondary">{location}</h2>
+          <h2 className="font-bold font-serif text-secondary">{name}</h2>
           <h4 className="font-semibold font-serif">{country}</h4>
-          <h3 className="font-medium font-serif">{name}</h3>
+          <h3 className="font-medium font-serif">{location}</h3>
           <p className="font-serif">{description.slice(0,110)}....</p>
           <div>
             <Link to={`/details/${_id}`}>
