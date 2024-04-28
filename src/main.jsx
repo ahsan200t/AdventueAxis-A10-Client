@@ -15,6 +15,7 @@ import SpotDetails from "./components/SpotDetails/SpotDetails";
 import AuthProvider from "./Provider/AuthProvider";
 import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
 import AddCountry from "./components/AddCountry/AddCountry";
+import UpdateSpot from "./components/UpdateSpot/UpdateSpot";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
         element:<AddCountry></AddCountry>,
         loader: ()=> fetch("http://localhost:5000/country")
 
+      },
+      {
+        path:'/update/:id',
+        element:<PrivetRoute><UpdateSpot></UpdateSpot></PrivetRoute>,
+        loader:({params})=> fetch(`http://localhost:5000/spots/${params.id}`)
       }
     ],
   },

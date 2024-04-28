@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 /* eslint-disable react/prop-types */
@@ -61,9 +62,11 @@ const MyListCard = ({ data }) => {
                 <img className="w-16" src={photo} alt="" />
               </td>
               <td>
-                <button className="btn bg-emerald-700 btn-sm text-white">
-                  Update
-                </button>
+                <Link to={`/update/${_id}`}>
+                  <button className="btn bg-emerald-700 btn-sm text-white">
+                    Update
+                  </button>
+                </Link>
               </td>
               <td>
                 <button
