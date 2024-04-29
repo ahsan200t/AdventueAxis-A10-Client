@@ -3,6 +3,8 @@ import Banner from "../Banner/Banner";
 import SpotCard from "../spotCard/SpotCard";
 import Country from "../Country/Country";
 import { Fade } from "react-awesome-reveal";
+import OurPricingPlan from "../OurPricingPlan/OurPricingPlan";
+import ContactUs from "../ContactUs/ContactUs";
 
 const Home = () => {
   const allSpot = useLoaderData();
@@ -43,6 +45,8 @@ const Home = () => {
           </div>
         </Fade>
       </div>
+      <OurPricingPlan></OurPricingPlan>
+      <ContactUs></ContactUs>
     </div>
   );
 };
