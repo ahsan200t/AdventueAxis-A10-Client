@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const SpotCard = ({ spot }) => {
+
   const {
     _id,
      name,
@@ -9,6 +10,7 @@ const SpotCard = ({ spot }) => {
     location,
     description,
     photo,}=spot;
+    console.log(spot)
   return (
     <div>
       <div className="card card-compact border border-emerald-700 bg-base-100 shadow h-[400px]">

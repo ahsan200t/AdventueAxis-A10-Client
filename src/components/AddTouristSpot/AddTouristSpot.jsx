@@ -1,12 +1,10 @@
-
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Fade } from "react-awesome-reveal";
 
-
 const AddTouristSpot = () => {
-  const {user}=useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const handleAddSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,7 +20,6 @@ const AddTouristSpot = () => {
     const email = form.email.value;
     const user = form.user.value;
     const photo = form.photo.value;
-
 
     const newSpot = {
       name,
@@ -54,38 +51,46 @@ const AddTouristSpot = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
-          form.reset()
+          form.reset();
         }
       });
   };
 
   return (
     <div className="bg-gray-300 border border-emerald-700 p-4 m-4 md:p-24 rounded-3xl">
-      <Fade delay={500}><h1 className="text-3xl font-extrabold text-center mb-8 font-serif">
-        Add Tourist Spot
-      </h1></Fade>
+      <Fade delay={500}>
+        <h1 className="text-3xl font-extrabold text-center mb-8 font-serif">
+          Add Tourist Spot
+        </h1>
+      </Fade>
       <form onSubmit={handleAddSpot}>
         {/* Country Name and Spot Name */}
-        <div className="md:flex ">
+        <div className="md:flex">
           <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text card-title font-serif">
-                Country Name  
+                Country Name
               </span>
             </label>
-            <input
+
+            <select
               type="text"
-              placeholder="Country Name"
-              className="input input-bordered border-emerald-700 w-full"
+              className="input input-bordered select border-emerald-700 w-full"
               required
-              name="country" 
-            />
-            
+              name="country">
+            <option>Select Your Country</option>
+            <option>Bangladesh</option>
+            <option>Thailand</option>
+            <option>Indonesia</option>
+            <option>Malaysia</option>
+            <option>Vietnam</option>
+            <option>Cambodia</option>
+            </select>
           </div>
           <div className="form-control w-full md:w-1/2 md:ml-4">
             <label className="label">
               <span className="label-text card-title font-serif">
-               Tourists Spot Name
+                Tourists Spot Name
               </span>
             </label>
             <input
