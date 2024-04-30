@@ -5,11 +5,13 @@ import Country from "../Country/Country";
 import { Fade } from "react-awesome-reveal";
 import OurPricingPlan from "../OurPricingPlan/OurPricingPlan";
 import ContactUs from "../ContactUs/ContactUs";
+// import { useEffect, useState } from "react";
+
 
 const Home = () => {
   const allSpot = useLoaderData();
   const allCountry = useLoaderData();
-  const spots = allSpot.slice(0, 6);
+  const spots=allSpot.slice(0,6)
   return (
     <div>
       <Banner></Banner>

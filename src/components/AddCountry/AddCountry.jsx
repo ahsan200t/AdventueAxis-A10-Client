@@ -13,7 +13,7 @@ const AddCountry = () => {
         country,
         description
     };
-     fetch('http://localhost:5000/country', {
+     fetch('https://tourism-management-server-beta.vercel.app/country', {
         method:"POST",
         headers:{
             "content-type":"application/json"

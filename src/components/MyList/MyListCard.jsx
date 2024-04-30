@@ -18,7 +18,7 @@ const MyListCard = ({ data, spots, setSpots }) => {
       if (result.isConfirmed) {
         console.log("delete Confirm");
         //
-        fetch(`http://localhost:5000/spots/${_id}`, {
+        fetch(`https://tourism-management-server-beta.vercel.app/spots/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

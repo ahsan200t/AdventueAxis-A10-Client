@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 const SpotDetails = () => {
   const details = useLoaderData();
   const {
-    _id,
      name,
     country,
     location,
@@ -12,11 +11,7 @@ const SpotDetails = () => {
     season,
     time,
     visitors,
-    email,
-    user,
     photo,}=details;
-
-  
 
   return (
     <div className="font-serif">

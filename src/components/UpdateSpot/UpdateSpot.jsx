@@ -46,7 +46,7 @@ const UpdateSpot = () => {
       user,
       photo,
     };
-    fetch(`http://localhost:5000/spots/${_id}`, {
+    fetch(`https://tourism-management-server-beta.vercel.app//spots/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

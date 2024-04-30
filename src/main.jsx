@@ -26,12 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () =>
+          fetch("https://tourism-management-server-beta.vercel.app/spots"),
       },
       {
         path: "/tourist",
         element: <AllTouristSpot></AllTouristSpot>,
-        loader:()=> fetch("http://localhost:5000/spots")
+        loader: () =>
+          fetch("https://tourism-management-server-beta.vercel.app/spots"),
       },
 
       {
@@ -62,19 +64,26 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(
+            `https://tourism-management-server-beta.vercel.app/spots/${params.id}`
+          ),
       },
       {
-        path:'/addcountry',
-        element:<AddCountry></AddCountry>,
-        loader: ()=> fetch("http://localhost:5000/country")
-
+        path: "/addcountry",
+        element: <AddCountry></AddCountry>,
       },
       {
-        path:'/update/:id',
-        element:<PrivetRoute><UpdateSpot></UpdateSpot></PrivetRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/spots/${params.id}`)
-      }
+        path: "/update/:id",
+        element: (
+          <PrivetRoute>
+            <UpdateSpot></UpdateSpot>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://tourism-management-server-beta.vercel.app/spots/${params.id}`
+          ),
+      },
     ],
   },
 ]);
